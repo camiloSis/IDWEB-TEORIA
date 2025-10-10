@@ -1,0 +1,166 @@
+body{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(90deg, #222a8f 0%, #eb6ec9 100%);
+color: #e7dede;
+overflow-x: hidden;
+}
+
+.contenedor{
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+header{
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+}
+
+h1{
+    font-size: 3em;
+    margin-bottom: 9px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.35);
+    
+}
+
+.subtitulos{
+    font-size: 1.5em;
+    opacity: 0.8;
+
+}
+
+.barraNavegacion{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 11px; /*crea un espacio de 11pixeles entre cada elementos del contenedor*/
+    margin: 30px 0px;
+    flex-wrap: wrap; /*Se adapta a celulares o pantallas pequeñas*/
+
+}
+
+.botondePestaña{
+    background: white; 
+    border: none;
+    padding: 15px 30px; /*crea 15 pixeles enter el borde de la parte superior e inferior con el texto y 30 px de relleno entre el borde del lago izquier y derecho con el texto*/
+    border-radius: 45px;
+    cursor: pointer; /*Solo hace que el cursor cambie de forma cuando pasa sobre el boton*/
+    font-size: 1em;
+    font-weight: bold; /*texto en negrita*/
+    color: #667eea;
+    transition: all 0.35s ease; /*cualquier cambio que ocurra debe ocurren durante 0.35 segundos en vez de hacerlo instantaneamete*/
+    text-shadow: 0px 4px 5px rgba(0,0,0,0.15); /*sombra sin desplazamiento horizontal (0px) y 75% transparente*/
+    /*el radio de desesenfoque es de 5px, es decir, mientras mas grande sea el valor, mas difusa o borrosa se pone*/
+
+}
+.botondePestaña:hover{ /*Esta pseudoclase aplica todas las reglas puestas en la misma cuando el cursor pasa por encima del elemento(especifica un estado especial solo cuando ocurre el acto)*/
+transform: translateY (-3px); /*mueve el boton 3px hacia arriba*/
+box-shadow: 0px 6px 12px rgba(0,0,0,0.25) 
+
+}
+
+.botondePestaña:Active{ /*basicamente le dice al usuario en que boton de pestaña se encuentra, oues cambia de color cuando se le da click*/
+    background: #66297a;
+    color: white;
+}
+
+.contenidoSeccion{
+    display: none; /*oculta todas las secciones por defecto*/
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0px; /*20px de margen supeior e inferior y 0px de irizquierda y derecha*/
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+    /*----*/
+}
+
+.contenidoSeccion.active{
+    display: block; /* sobreescribe el display anterior (none) volviendolo ahora visible*/
+}
+
+h2{
+    color: #667eea;
+    margin-bottom:20px;
+    font-size: 2em;
+    border-bottom:3px solid #764ba2; /*crea una linea por dejabjo de los subitutlos h2 de 3px color mmorado*/
+    padding-bottom: 10px; /*crea un un espacio de 10px por debajo de h2 y la linea border-bottom*/
+
+}
+
+h3 {
+    color: #764ba2;
+    margin: 25px 0 15px 0; /*establece el margen en los 4 lados*/
+    font-size: 1.5em;
+}
+
+.tarjeta{
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0px 20px 0px;
+    border-left: 5px solid #667eea;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover{
+    transform: translateX(10px);
+}
+
+.resaltado{
+    background: linear-gradient(12120deg, #84fab0 0%, #8fd3f4 100%);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.grid-demo{ /*define un contenedor grid (una cuadricula)*/
+    display:grid; /*establece el contenedor como un grid*/
+    grid-template-columns:repeat(auto-fit,minmax(250px, 1fr)); /*establece que las columnas se adapten automaticamente al tamaño de la pantalla, con un tamaño minimo de 250px y maximo de 1fr (fraccion del espacio disponible)*/
+    gap:20px; /*espacio entre filas y columnas*/
+
+}
+
+.grid-item{ /*estilo del item en cada cuadricula*/
+
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius:15px;
+    text-align: center;
+    transition: trasnsform 0.4s ease;
+
+}
+
+.grid-item:hover{
+    transform: scale (1.10);
+}
+
+ul, ol{
+    margin: 15px 0px 15px 30px;
+    line-height:1.8; /*controla el espaciado entre las lineas de texto (el interlineado)*/
+
+}
+
+li{
+    margin: 10px 0px 0px 0px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+     margin-top: 50px;
+}
+
+@media (max-width: 768px){ /*solo aplica las reglas si es que la pantalla tiene como ancho maximo 768 pixeles*/
+    h1{
+        font-size: 2em;
+    }
+    .contenidoSeccion{
+        padding: 20px; /*reduce el relleno interno del panel para recuperar espacio y se logre ser agradable visualmente en pantallas pequeñas*/
+    }
+    .grid-demo{
+        grid-template-columns: 1fr; /*cambia el grid a una sola columna en pantallas pequeñas, ya no se ajusta al tamaño de la pantalla, sino que obliga a usar toda la fraccion disponible (1fr) para evitar problemas*/ 
+    }
+}   
