@@ -1,166 +1,280 @@
-body{
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: linear-gradient(90deg, #222a8f 0%, #eb6ec9 100%);
-color: #e7dede;
-overflow-x: hidden;
+/* ============================================
+   ESTILOS GENERALES Y CONFIGURACIÓN DEL BODY
+   ============================================ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Tu nuevo gradiente Negro a Rojo */
+    background: linear-gradient(90deg, #000000 0%, #d82828 100%);
+    color: #e7dede;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-.contenedor{
+.contenedor {
     max-width: 1200px;
-    margin:0 auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
-header{
+/* ============================================
+   HEADER - CABECERA DE LA PÁGINA
+   ============================================ */
+
+header {
     text-align: center;
     color: white;
-    padding: 50px 20px;
+    padding: 50px 20px 20px 20px;
 }
 
-h1{
+h1 {
     font-size: 3em;
     margin-bottom: 9px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.35);
-    
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
-.subtitulos{
+.subtitulos {
     font-size: 1.5em;
-    opacity: 0.8;
-
+    opacity: 0.9;
 }
 
-.barraNavegacion{ 
+/* ============================================
+   BARRA DE NAVEGACIÓN (DENTRO DE CONTENEDOR VISIBLE)
+   ============================================ */
+
+/* Nueva clase para que el menú parezca una "cápsula" blanca */
+.contenedor-menu {
+    padding: 10px 20px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    border-radius: 50px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.4) !important;
+}
+
+.barraNavegacion { 
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 11px; /*crea un espacio de 11pixeles entre cada elementos del contenedor*/
-    margin: 30px 0px;
-    flex-wrap: wrap; /*Se adapta a celulares o pantallas pequeñas*/
-
+    gap: 12px;
+    margin: 0 !important; /* Reseteado para que lo maneje el contenedor-menu */
+    flex-wrap: wrap;
 }
 
-.botondePestaña{
-    background: white; 
-    border: none;
-    padding: 15px 30px; /*crea 15 pixeles enter el borde de la parte superior e inferior con el texto y 30 px de relleno entre el borde del lago izquier y derecho con el texto*/
-    border-radius: 45px;
-    cursor: pointer; /*Solo hace que el cursor cambie de forma cuando pasa sobre el boton*/
-    font-size: 1em;
-    font-weight: bold; /*texto en negrita*/
-    color: #667eea;
-    transition: all 0.35s ease; /*cualquier cambio que ocurra debe ocurren durante 0.35 segundos en vez de hacerlo instantaneamete*/
-    text-shadow: 0px 4px 5px rgba(0,0,0,0.15); /*sombra sin desplazamiento horizontal (0px) y 75% transparente*/
-    /*el radio de desesenfoque es de 5px, es decir, mientras mas grande sea el valor, mas difusa o borrosa se pone*/
-
-}
-.botondePestaña:hover{ /*Esta pseudoclase aplica todas las reglas puestas en la misma cuando el cursor pasa por encima del elemento(especifica un estado especial solo cuando ocurre el acto)*/
-transform: translateY (-3px); /*mueve el boton 3px hacia arriba*/
-box-shadow: 0px 6px 12px rgba(0,0,0,0.25) 
-
-}
-
-.botondePestaña:Active{ /*basicamente le dice al usuario en que boton de pestaña se encuentra, oues cambia de color cuando se le da click*/
-    background: #66297a;
+.botondePestaña {
+    background: #1a1a1a; /* Botones oscuros para contrastar con el fondo blanco del nav */
+    border: 1px solid #d82828;
+    padding: 12px 25px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: bold;
     color: white;
+    transition: all 0.35s ease;
 }
 
-.contenidoSeccion{
-    display: none; /*oculta todas las secciones por defecto*/
-    background: white;
+.botondePestaña:hover { 
+    transform: translateY(-3px);
+    background: #d82828;
+    box-shadow: 0px 4px 10px rgba(216, 40, 40, 0.3);
+}
+
+.botondePestaña.active { 
+    background: #9ab678; /* Tu verde oliva para lo activo */
+    color: white;
+    border-color: #9ab678;
+}
+
+/* ============================================
+   CONTENIDO DE LAS SECCIONES (PESTAÑAS)
+   ============================================ */
+
+.contenidoSeccion {
+    display: none;
+    background: rgba(243, 237, 237, 0.98); /* Blanco casi sólido para lectura perfecta */
+    color: #1a1a1a; /* Texto oscuro para que se lea bien sobre blanco */
     border-radius: 20px;
     padding: 40px;
-    margin: 20px 0px; /*20px de margen supeior e inferior y 0px de irizquierda y derecha*/
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
-    /*----*/
+    margin: 20px 0px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.5);
+    border-top: 6px solid #752626; /* Detalle rojo arriba */
 }
 
-.contenidoSeccion.active{
-    display: block; /* sobreescribe el display anterior (none) volviendolo ahora visible*/
+.contenidoSeccion.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
 }
 
-h2{
-    color: #667eea;
-    margin-bottom:20px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   TÍTULOS DENTRO DE SECCIONES
+   ============================================ */
+
+h2 {
+    color: #000000; /* Rojo vibrante */
+    margin-bottom: 20px;
     font-size: 2em;
-    border-bottom:3px solid #764ba2; /*crea una linea por dejabjo de los subitutlos h2 de 3px color mmorado*/
-    padding-bottom: 10px; /*crea un un espacio de 10px por debajo de h2 y la linea border-bottom*/
-
+    border-bottom: 3px solid #9ab678; /* Línea verde oliva */
+    padding-bottom: 10px;
 }
 
 h3 {
-    color: #764ba2;
-    margin: 25px 0 15px 0; /*establece el margen en los 4 lados*/
+    color: #748c57; /* Verde oliva para jerarquía */
+    margin: 25px 0 15px 0;
     font-size: 1.5em;
 }
 
-.tarjeta{
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+/* ============================================
+   TARJETAS (CARDS)
+   ============================================ */
+
+.tarjeta {
+    background: #f1f3f5; /* Gris muy suave */
     border-radius: 15px;
     padding: 25px;
-    margin: 20px 0px 20px 0px;
-    border-left: 5px solid #667eea;
+    margin: 20px 0px;
+    border-left: 6px solid #9ab678; /* Acento verde oliva */
     transition: transform 0.3s ease;
 }
 
-.tarjeta:hover{
+.tarjeta:hover {
     transform: translateX(10px);
 }
 
-.resaltado{
-    background: linear-gradient(12120deg, #84fab0 0%, #8fd3f4 100%);
-    padding: 3px 8px;
+.tarjeta p, .tarjeta ul li, .tarjeta ol li {
+    color: #333; /* Texto bien oscuro */
+}
+
+/* ============================================
+   ELEMENTOS RESALTADOS Y GRID
+   ============================================ */
+
+.resaltado {
+    background: #e8eb58;
+    padding: 2px 4px;
     border-radius: 5px;
+    font-weight: bold;
+    color: rgb(17, 17, 17);
+}
+
+.grid-demo { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.grid-item { 
+    background: linear-gradient(135deg, #daee3f 0%, #46b97e 100%);
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.grid-item:hover { transform: scale(1.05); }
+
+.grid-item h3, .grid-item p { color: rgb(0, 0, 0); }
+
+/* ============================================
+   FORMULARIO DE CONTACTO
+   ============================================ */
+
+.form-group label {
+    color: #d82828;
     font-weight: bold;
 }
 
-.grid-demo{ /*define un contenedor grid (una cuadricula)*/
-    display:grid; /*establece el contenedor como un grid*/
-    grid-template-columns:repeat(auto-fit,minmax(250px, 1fr)); /*establece que las columnas se adapten automaticamente al tamaño de la pantalla, con un tamaño minimo de 250px y maximo de 1fr (fraccion del espacio disponible)*/
-    gap:20px; /*espacio entre filas y columnas*/
-
+.form-group input, .form-group textarea {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
-.grid-item{ /*estilo del item en cada cuadricula*/
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #9ab678;
+    outline: none;
+    box-shadow: 0 0 8px rgba(154, 182, 120, 0.4);
+}
 
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.btn-submit {
+    background: linear-gradient(135deg, #c4ab5b 0%, #ba6d96 100%);
     color: white;
-    padding: 30px;
-    border-radius:15px;
-    text-align: center;
-    transition: trasnsform 0.4s ease;
-
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.grid-item:hover{
-    transform: scale (1.10);
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(216, 40, 40, 0.4);
 }
 
-ul, ol{
-    margin: 15px 0px 15px 30px;
-    line-height:1.8; /*controla el espaciado entre las lineas de texto (el interlineado)*/
-
-}
-
-li{
-    margin: 10px 0px 0px 0px;
-}
+/* ============================================
+   FOOTER
+   ============================================ */
 
 footer {
     text-align: center;
     color: white;
     padding: 40px 20px;
-     margin-top: 50px;
+    margin-top: 50px;
 }
 
-@media (max-width: 768px){ /*solo aplica las reglas si es que la pantalla tiene como ancho maximo 768 pixeles*/
-    h1{
-        font-size: 2em;
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .contenedor-menu { border-radius: 20px !important; }
+    h1 { font-size: 2em; }
+    .contenidoSeccion { padding: 20px; }
+    .botondePestaña { padding: 10px 15px; font-size: 0.85em; }
+}
+
+/* Esto pone los elementos en línea (horizontal) */
+.fila-sobre-mi {
+    display: flex;
+    align-items: flex-start; /* Alinea la foto con la parte de arriba del texto */
+    gap: 25px;               /* Espacio de separación entre foto y texto */
+}
+
+/* Fija el tamaño de la columna de la foto para que no se mueva */
+.columna-foto {
+    flex: 0 0 180px;         /* La foto siempre medirá 180px de ancho */
+}
+
+.foto-perfil {
+    width: 100%;             /* Ocupa todo el ancho de su columna (180px) */
+    height: auto;            /* Mantiene la proporción */
+    border-radius: 10px;     /* Bordes redondeados (opcional) */
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* La columna de texto ocupa todo el espacio restante */
+.columna-texto {
+    flex: 1;
+}
+
+/* Opcional: Si quieres que en celulares se ponga uno sobre otro para que no se vea apretado */
+@media (max-width: 600px) {
+    .fila-sobre-mi {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    .contenidoSeccion{
-        padding: 20px; /*reduce el relleno interno del panel para recuperar espacio y se logre ser agradable visualmente en pantallas pequeñas*/
-    }
-    .grid-demo{
-        grid-template-columns: 1fr; /*cambia el grid a una sola columna en pantallas pequeñas, ya no se ajusta al tamaño de la pantalla, sino que obliga a usar toda la fraccion disponible (1fr) para evitar problemas*/ 
-    }
-}   
+}

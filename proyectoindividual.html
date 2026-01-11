@@ -1,38 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Pagina Personal</title>
+    <title>Mi Página Personal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <div class="contenedor">
-
-            <h1>🧑‍🎓 Mi Presentación Personal </h1>
-            <p class="subtitulo" >😇 Y también mi primera página web. 🧐</p>
-
+            <h1>🧑‍🎓 Mi Presentación Personal</h1>
         </div>
     </header>
 
-<div class="contenedor">
-    
-    <nav class="barraNavegacion"> 
-        
-        <button class="botondePestaña active" onclick="showTab('Sobre mi')">Sobre mi</button> 
-        <button class="botondePestaña" onclick="showTab('otra cosa1')">otra cosa1</button>
-        <button class="botondePestaña" onclick="showTab('otra cosa2')">otra cosa2</button>
+    <div class="contenedor">
+        <!-- Barra de Navegación entre pestañas -->
+        <nav class="barraNavegacion"> 
+            <button class="botondePestaña active" onclick="showTab('sobreMi', event)">Sobre Mí</button> 
+            <button class="botondePestaña" onclick="showTab('habilidades', event)">Habilidades</button>
+            <button class="botondePestaña" onclick="showTab('proyectos', event)">Proyectos</button>
+            <button class="botondePestaña" onclick="showTab('hobbies', event)">Hobbies</button>
+            <button class="botondePestaña" onclick="showTab('contacto', event)">Contacto</button>
         </nav>
-    
-</div>
 
+        <!-- ============================================ -->
+        <!-- SECCIÓN 1: SOBRE MÍ -->
+        <!-- ============================================ -->
+        <div id="sobreMi" class="contenidoSeccion active">
+            <h2>👤 Sobre Mí</h2>
+            
+            <div class="tarjeta">
+                <div class="fila-sobre-mi">
+                    <div class="columna-foto">
+                        <img src="img/carnet.jpg" alt="Foto de Camilo" class="foto-perfil">
+                    </div>
+                    <div class="columna-texto">
+                        <h3>Hola!! Soy Camilo Capatinta A.</h3>
+                        <p>Estudiante de Ingeniería de Sistemas (2do año) apasionado por la tecnología y la programación. Este es mi primer proyecto web completo donde integro frontend, backend y bases de datos.</p>
+                        <p>Me encanta aprender nuevas tecnologías y resolver problemas mediante código. Actualmente estoy enfocado en dominar el stack completo de desarrollo web, desde el diseño de interfaces hasta la gestión de bases de datos.</p>
+                        <p>Este proyecto representa mi compromiso con el aprendizaje continuo y mi capacidad para crear soluciones tecnológicas desde cero.</p>
+                    </div>
+                </div>
+            </div>
 
-    
+            <div class="tarjeta">
+                <div class ="fila-sobre-mi">
+                    <div class = "columa-foto">
+                        <img src="img/unsa.png" alt="Ingenieria de Sistemas" class = "foto-perfil">
+                    </div>
+                        <h3>📚 Mi Formación Académica</h3>
+                        <ul>
+                            <li><strong>Universidad:</strong>Universidad Nacional de San Agustín de Arequipa</li>
+                            <li><strong>Carrera:</strong>Ingeniería de Sistemas </li>
+                            <li><strong>Año Académico:</strong> 2do año</li>
+                            <li><strong>Áreas de Interés:</strong> Desarrollo Web Full Stack, Programación en Python, Diseño de Interfaces, Bases de Datos Relacionales</li>
+                        </ul>
+                </div>
+            </div>
 
+            <div class="tarjeta">
+                <h3>🎯 Mis Objetivos</h3>
+                <ol>
+                    <li>Completar exitosamente este proyecto integrando todas las tecnologías web</li>
+                    <li>Dominar el desarrollo Full Stack con Python, HTML, CSS y JavaScript</li>
+                    <li>Crear aplicaciones web que resuelvan problemas reales</li>
+                    <li>Contribuir a proyectos open source y colaborar con la comunidad tech</li>
+                    <li>Seguir aprendiendo nuevos frameworks y herramientas modernas</li>
+                </ol>
+            </div>
+        </div>
 
+        <!-- ============================================ -->
+        <!-- SECCIÓN 2: HABILIDADES -->
+        <!-- ============================================ -->
+        <div id="habilidades" class="contenidoSeccion">
+            <h2>💻 Mis Habilidades Técnicas</h2>
+            
+            <h3>Stack Tecnológico Actual:</h3>
+            <div class="grid-demo">
+                <div class="grid-item">
+                    <h3> Frontend</h3>
+                    <p><strong>HTML & CSS</strong></p>
+                    <p>Layouts responsivos, Flexbox, Grid, Animaciones</p>
+                </div>
+                <div class="grid-item">
+                    <h3> JavaScript</h3>
+                    <p><strong>Vanilla JS</strong></p>
+                    <p>DOM, Eventos, Validaciones, Interactividad</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Backend</h3>
+                    <p><strong>Python</strong></p>
+                    <p>HTTP Server, Routing, Form Handling</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Bases de Datos</h3>
+                    <p><strong>MySQL</strong></p>
+                    <p>Queries, Diseño de tablas, CRUD operations</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Herramientas</h3>
+                    <p><strong>Dev Tools</strong></p>
+                    <p>Git, GitHub, VS Code, Terminal</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Diseño</h3>
+                    <p><strong>Responsive</strong></p>
+                    <p>Mobile-first, Media queries, UX/UI</p>
+                </div>
+            </div>
 
-    
+            <div class="tarjeta">
+                <h3>📈 Nivel de Competencia por Tecnología</h3>
+                <ul>
+                    <li><strong>HTML/CSS:</strong> <span class="resaltado">Básico</span> - Puedo crear layouts responsive básicos-intermedios y aplicar estilos estándar con gradientes, transiciones y animaciones</li>
+                    <li><strong>JavaScript:</strong> <span class="resaltado">Básico</span> - Manipulación del DOM, manejo de eventos, validación de formularios y efectos interactivos</li>
+                    <li><strong>Python:</strong> <span class="resaltado">Básico</span> - Programación de servidores HTTP, procesamiento de datos, manejo de formularios y conexión con bases de datos</li>
+                    <li><strong>MySQL:</strong> <span class="resaltado">Básico</span> - Consultas SQL básicas (SELECT, INSERT, UPDATE, DELETE), diseño de tablas y relaciones simples</li>
+                    <li><strong>Git/GitHub:</strong> <span class="resaltado">Básico</span> - Control de versiones, commits, push, pull y documentación de proyectos</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🎓 Habilidades Blandas</h3>
+                <ul>
+                    <li><strong>Resolución de Problemas:</strong> Capacidad para analizar problemas complejos y encontrar soluciones creativas</li>
+                    <li><strong>Aprendizaje Autónomo:</strong> Me gusta investigar y aprender nuevas tecnologías por mi cuenta</li>
+                    <li><strong>Atención al Detalle:</strong> Cuidado en la escritura de código limpio y bien documentado</li>
+                    <li><strong>Trabajo en Equipo:</strong> Experiencia colaborando en proyectos grupales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN 3: PROYECTOS -->
+        <!-- ============================================ -->
+        <div id="proyectos" class="contenidoSeccion">
+            <h2>🚀 Mis Proyectos</h2>
+            
+            <div class="tarjeta">
+                <h3>📌 Proyecto 1: Portafolio Web Personal (este proyecto)</h3>
+                <p>Aplicación web personal desarrollada desde cero como proyecto final del curso de Desarrollo Web. Integra todas las tecnologías aprendidas en un solo sistema funcional.</p>
+                
+                <h3> Tecnologías Utilizadas:</h3>
+                <ul>
+                    <li><strong>Frontend:</strong> HTML con estructura semántica, CSS con diseño responsive usando Flexbox y Grid</li>
+                    <li><strong>JavaScript:</strong> Sistema de navegación por pestañas, validación de formularios en tiempo real, animaciones y efectos interactivos</li>
+                    <li><strong>Backend:</strong> Servidor HTTP en Python puro (http.server o wsgiref.simple_server) con manejo manual de rutas</li>
+                    <li><strong>Base de Datos:</strong> MySQL para almacenar mensajes de contacto con consultas y panel de administración</li>
+                </ul>
+                
+                <h3> Características Principales:</h3>
+                <ol>
+                    <li>Diseño completamente responsive que se adapta a móviles, tablets y desktop</li>
+                    <li>Sistema de navegación dinámico entre 5 secciones sin recargar la página</li>
+                    <li>Formulario de contacto con validación en tiempo real y envío al servidor</li>
+                    <li>Panel de administración protegido por contraseña para gestionar mensajes</li>
+                    <li>Código limpio, comentado y alojado en repositorio GitHub público</li>
+                </ol>
+                
+                <p><span class="resaltado">Estado:</span> ✅ Terminado - 100% completado</p>
+                <p><span class="resaltado">Repositorio:</span> <a href="#" style="color: #764ba2;">https://github.com/camiloSis/individualIDWEB</a></p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>📌 Proyecto 2: Acabar en Tercio o Quinto superior</h3>
+                <p>Una de mis metas más grandes a lo largo de la carrera y también un proyecto por que toma tiempo y trabajo duro.</p>
+                
+                <h3>¿Por qué?</h3>
+                <ul>
+                    <li>Puedes obtener cartas de recomendación de profesores para oportunidades laborales</li>
+                    <li>Obtienes becas del estado o de otras entidades que refuerzan tu formación académica.</li>
+                    <li>Viajar sin coste alguno con el fin de realizar trabajos de investigación.</li>
+                    <li>Ayuda bastante en la formación integral así como en la académica</li>
+                </ul>
+
+            </div>
+
+            <div class="tarjeta">
+                <h3>📌 Proyecto 3: Estudiar otras carreras</h3>
+                <p>No sólo porque me guste la formación académica y el conocimiento científico, sino porque estudiar una carrera indudablemente abre puertas hacia otras en las cuales puedes expandirte laboralmente.</p>
+                
+                <h3> ¿Cuáles son mis carreras candidatas? </h3>
+                <ul>
+                    <li>Ingeniería Aeroespacial (Universidad Nacional de Ingeniería) </li>
+                    <li>Física o Matemáticas (Universidad Nacional de Ingeniería u otra universidad extranjera) </li>
+                    <li>Maestrías o doctorados </li>
+                </ul>
+
+            </div>
+
+            <div class="grid-demo">
+                <div class="grid-item">
+                    <h3>🎨 Talleres de arte</h3>
+                    <p><strong>Talleres extracurriculares</strong></p>
+                    <p>Sin duda refuerza la capacidad cognitiva el entendimiento abstracto</p>
+                </div>
+                <div class="grid-item">
+                    <h3>♟ Estudiar el Ajedrez</h3>
+                    <p><strong>Mi ELO actual: 800</strong></p>
+                    <p>Juego interesante y que vale la pena analizarlo, estudiarlo y sobretodo disfrutarlo</p>
+                </div>
+                <div class="grid-item">
+                    <h3>📊 Generar ingresos</h3>
+                    <p><strong>Trading o Criptomonedas</strong></p>
+                    <p>Más que nada me refiero al trabajo independiente, siendo los 2 campos de arriba los más populares.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN 4: HOBBIES -->
+        <!-- ============================================ -->
+        <div id="hobbies" class="contenidoSeccion">
+            <h2>¿Cuáles son mis Hobbies?</h2>
+            
+            <p>Tengo bastantes hobbies para ser honesto, no me quedo solo con uno, si encuentro alguna actividad interesante y sobre análitica, no dudo en dedicarle un tiempo para poder comprenderla o estudiarla.</p>
+
+            <div class="grid-demo">
+                <div class="grid-item">
+                    <h3> Música </h3>
+                    <p>Black Metal, Trash Metal, Metal Industrial, DeathCore, GrindCore, Música independiente, Electrocash, Shoegaze y otros generos.</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Lectura </h3>
+                    <p> Especialmente me enfoco en literatura, algunos de mis favoritos son: "Jorge el hijo del pueblo" (Maria Nieves y Bustamante), "Letters to Milena" (Franz Kafka), "La caída" (A. Camus) y muchos otros más. </p>
+                </div>
+                <div class="grid-item">
+                    <h3> Deportes</h3>
+                    <p> El único deporte al que le he dedicado tiempo ha sido la natación, fuera de ello no practico otras cosas.</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Gaming </h3>
+                    <p> Ajedrez, juegos de shooter (Counter Strike 2, Left 4 Dead 2), Dota 1 y 2, etc.  </p>
+                </div>
+                <div class="grid-item">
+                    <h3> Fotografía y cine </h3>
+                    <p> Disfruto mucho la fotografía cuando me encuentro viajando o cuando veo algún lugar que solo en ese momento es lo suficientemente bello para capturarlo. Tammbién me gusta la cinematografía, el ambiente y la calidad de actuación</p>
+                </div>
+                <div class="grid-item">
+                    <h3> Viajes </h3>
+                    <p>Si bien no lo hago a menudo, disfruto cuando sí lo hago, conozco nuevos ambientes, personas, culturas, entre otros que hacen el viaje más inmersivo.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3> Intereses Profesionales y de Aprendizaje</h3>
+                <ol>
+                    <li><strong>Nuevas Tecnologías:</strong> Siempre investigando frameworks modernos como React, Vue.js, Django y Flask</li>
+                    <li><strong>Inteligencia Artificial:</strong> Me fascina el Machine Learning y sus aplicaciones prácticas</li>
+                    <li><strong>Open Source:</strong> Aspiración de contribuir a proyectos de código abierto en GitHub</li>
+                    <li><strong>UI/UX Design:</strong> Aprendiendo principios de diseño para crear mejores interfaces</li>
+                    <li><strong>DevOps:</strong> Interesado en Docker, CI/CD y automatización de procesos</li>
+                    <li><strong>Ciberseguridad:</strong> Conceptos básicos de seguridad web y buenas prácticas</li>
+                </ol>
+            </div>
+
+            <div class="tarjeta">
+                <h3>📚 Recursos que Sigo</h3>
+                <ul>
+                    <li><strong>Canales de YouTube:</strong> freeCodeCamp, Traversy Media, The Net Ninja</li>
+                    <li><strong>Plataformas de Aprendizaje:</strong> freeCodeCamp, Codecademy, Platzi</li>
+                    <li><strong>Comunidades:</strong> Stack Overflow, GitHub Discussions, Dev.to</li>
+                    <li><strong>Blogs Técnicos:</strong> CSS-Tricks, MDN Web Docs, W3Schools</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🎯 Metas Personales 2026</h3>
+                <ul>
+                    <li>✅ Completar más proyectos web full stack</li>
+                    <li>✅ Aprender un framework JavaScript </li>
+                    <li>✅ Crear y desplegar 3 proyectos personales en producción</li>
+                    <li>✅ Comenzar a escribir artículos técnicos en un blog personal (tutoriales o reseñas) </li>
+                    <li>✅ Hacer networking con otros desarrolladores</li>
+                    <li>✅ Mantener un balance saludable entre código y ejercicio físico</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCIÓN 5: CONTACTO -->
+        <!-- ============================================ -->
+        <div id="contacto" class="contenidoSeccion">
+            <h2> ¿Quieres enviarme una reseña? </h2>
+            
+            <div class="tarjeta">
+                <h3> Envíame algo ! </h3>
+                <p>¿Tienes alguna pregunta, propuesta o simplemente quieres saludar? ¡Me encantaría saber de ti! Llena el siguiente formulario y te responderé lo antes posible.</p>
+                
+                    <form action="http://localhost:5002/submit_contact" method="POST" onsubmit="return validarFormulario()">
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo: *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                            <span id="errorNombre" class="error-message">El nombre debe tener al menos 3 caracteres</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico: *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            <span id="errorEmail" class="error-message">Por favor ingresa un email válido</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">Asunto:</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="¿De qué quieres hablar?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje: *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                            <span id="errorMensaje" class="error-message">El mensaje debe tener al menos 10 caracteres</span>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            Enviar Mensaje
+                        </button>
+
+                    </form>
+
+            </div>
+
+            <div class="tarjeta">
+                <h3> Otras Formas de Contacto</h3>
+                <ul>
+                    <li><strong>📧 Email:</strong> ccapatinta@unsa.edu.pe</li>
+                    <li><strong>🐙 GitHub:</strong> github.com/camiloSis</li>
+
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>⏰ Disponibilidad</h3>
+                <p>Generalmente respondo correos dentro de 24-48 horas. Si tu consulta es urgente, por favor indícalo en el asunto del mensaje.</p>
+                <ul>
+                    <li><strong>Mejor horario:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM</li>
+                    <li><strong>Zona Horaria:</strong> GMT-5 (Hora de Perú)</li>
+                    <li><strong>Idiomas:</strong> Español (nativo), Inglés (intermedio)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2026 <strong>Capatinta Almanza Camilo Bladimir Alexander</strong> - Todos los derechos reservados</p>
+            <p>🎓 Proyecto Final - Desarrollo Web Individual</p>
+            <p>Universidad Nacional de San Agustín de Arequipa</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- ARCHIVO JAVASCRIPT -->
+    <!-- ============================================ -->
+    <!-- Este script debe ir ANTES de cerrar </body> para asegurar que el DOM esté cargado -->
+    <script src="script.js"></script>
+
 </body>
 </html>
