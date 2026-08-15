@@ -1,0 +1,10 @@
+# Entorno
+.env
+.env.example
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store

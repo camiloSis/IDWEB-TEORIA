@@ -1,0 +1,7 @@
+.git
+.vscode
+__pycache__
+*.pyc
+.env
+ESTRUCTURA.md
+Diagnostico_Formal_Auditoria_IDWEB-TEORIA.md

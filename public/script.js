@@ -63,7 +63,6 @@ function showTab(tabId, event) {
     });
 
     // Mensaje en consola para debugging (puedes verlo con F12 en el navegador)
-    console.log('✅ Cambiado a la pestaña: ' + tabId);
 }
 
 
@@ -133,11 +132,9 @@ function validarFormulario() {
         errorNombre.style.display = 'block';
         campoNombre.style.borderColor = 'red';
         formularioEsValido = false;
-        console.log('❌ Error: Nombre muy corto');
     } else {
         // Si es válido, ponemos el borde verde
         campoNombre.style.borderColor = 'green';
-        console.log('✅ Nombre válido');
     }
 
     // ----------------------------------------
@@ -154,11 +151,9 @@ function validarFormulario() {
         errorEmail.style.display = 'block';
         campoEmail.style.borderColor = 'red';
         formularioEsValido = false;
-        console.log('❌ Error: Email inválido');
     } else {
         // Si cumple, borde verde
         campoEmail.style.borderColor = 'green';
-        console.log('✅ Email válido');
     }
 
     // ----------------------------------------
@@ -170,11 +165,9 @@ function validarFormulario() {
         errorMensaje.style.display = 'block';
         campoMensaje.style.borderColor = 'red';
         formularioEsValido = false;
-        console.log('❌ Error: Mensaje muy corto');
     } else {
         // Si es válido, borde verde
         campoMensaje.style.borderColor = 'green';
-        console.log('✅ Mensaje válido');
     }
 
     // ----------------------------------------
@@ -183,7 +176,6 @@ function validarFormulario() {
     
     if (formularioEsValido) {
         // Si TODO es válido, mostramos mensaje de éxito
-        console.log('✅ Formulario válido - Enviando al servidor...');
         mostrarMensajeExito();
         
         // NOTA: Cuando conectes con Python, el formulario se enviará automáticamente
@@ -191,7 +183,6 @@ function validarFormulario() {
         return true;
     } else {
         // Si hay errores, bloqueamos el envío
-        console.log('❌ Formulario inválido - Corrige los errores');
         return false;
     }
 }
@@ -213,7 +204,6 @@ function mostrarMensajeExito() {
         mensajeExito.style.display = 'none';
     }, 5000); // 5000 milisegundos = 5 segundos
 
-    console.log('✅ Mensaje de éxito mostrado');
 }
 
 
@@ -236,9 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
             window.history.replaceState({}, document.title, "/");
         }
     // DOMContentLoaded se dispara cuando todo el HTML está cargado y listo
-    console.log('🌐 Página cargada completamente');
-    console.log('🎨 Sistema de pestañas activado');
-    console.log('✔️ Validación de formulario lista');
 
     // ----------------------------------------
     // VALIDACIÓN EN TIEMPO REAL - NOMBRE
@@ -259,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.borderColor = '#667eea';
             }
         });
-        console.log('✅ Validación en tiempo real activada para Nombre');
     }
 
     // ----------------------------------------
@@ -278,7 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.borderColor = '#667eea';
             }
         });
-        console.log('✅ Validación en tiempo real activada para Email');
     }
 
     // ----------------------------------------
@@ -295,7 +280,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.borderColor = '#667eea';
             }
         });
-        console.log('✅ Validación en tiempo real activada para Mensaje');
     }
 
     // ----------------------------------------
@@ -330,7 +314,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300 + (indice * 100)); // 300ms base + 100ms por cada botón
     });
 
-    console.log('🎭 Animaciones de entrada ejecutadas');
 });
 
 

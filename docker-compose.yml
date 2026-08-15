@@ -1,38 +1,33 @@
-version: '3.8'
+# PostgreSQL es un servicio EXTERNO administrado por el usuario (pgAdmin 4).
+# Este Compose solo levanta la aplicación web que se conecta a esa instancia.
+
+# CONEXIÓN A POSTGRESQL DEL HOST (Linux):
+# Se usa network_mode: host: el contenedor comparte la red del host y
+# "localhost:5432" apunta directamente al PostgreSQL del sistema.
+# Ventajas: no requiere exponer PostgreSQL a la red (ni listen_addresses
+# 0.0.0.0, ni pg_hba), ni host.docker.internal, ni mapeo de puertos extra.
+# La web queda disponible en http://localhost:5002 (PORT se define abajo;
+# con red de host no existe NAT de puertos).
+#
+# Nota: network_mode: host es específico de Linux. En Docker Desktop
+# (Windows/macOS) el comportamiento difiere; para ese caso, usar
+# POSTGRES_HOST con la IP del host y quitar network: host.
 
 services:
-  db:
-    image: mysql:8.0
-    container_name: mysql_db_individual
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: tus_password
-      MYSQL_DATABASE: proyecto_db
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - "3307:3306" 
-
   web:
     build: .
-    container_name: python_app_individual
-    # Añadimos esta línea para asegurar que los cambios en Python se vean al instante
+    container_name: python_app_web
+    restart: always
     command: python -u app.py
+    network_mode: host
+    environment:
+      POSTGRES_HOST: ${POSTGRES_HOST:-localhost}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${POSTGRES_DB:-proyecto_db}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-CHANGE_ME}
+      ADMIN_USER: ${ADMIN_USER:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      PORT: ${WEB_PORT:-5002}
     volumes:
       - .:/app
-    ports:
-      - "5002:5000"
-    depends_on:
-      - db
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin_ui_individual
-    restart: always
-    ports:
-      - "8082:80"
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: tus_password
-    depends_on:
-      - db
